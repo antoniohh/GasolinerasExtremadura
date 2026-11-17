@@ -183,17 +183,18 @@ import { withBase } from "../lib/site";
     width: 48px;
     height: 26px;
     flex-shrink: 0;
-    cursor: pointer;
   }
 
   .cookie-switch input {
     opacity: 0;
     width: 0;
     height: 0;
+    position: absolute;
   }
 
   .cookie-switch__slider {
     position: absolute;
+    cursor: pointer;
     inset: 0;
     background-color: #cbd5e1;
     border-radius: 26px;
@@ -244,12 +245,12 @@ import { withBase } from "../lib/site";
     };
 
     const applyConsent = (isGranted: boolean) => {
+      const state = isGranted ? "granted" : "denied";
       try {
-        localStorage.setItem(STORAGE_KEY, isGranted ? "granted" : "denied");
+        localStorage.setItem(STORAGE_KEY, state);
       } catch {}
 
       if (typeof (window as any).gtag === "function") {
-        const state = isGranted ? "granted" : "denied";
         (window as any).gtag("consent", "update", {
           analytics_storage: state,
           ad_storage: state,
@@ -330,7 +331,7 @@ import { withBase } from "../lib/site";
 
     document.addEventListener("click", (e) => {
       const target = e.target as HTMLElement | null;
-      const trigger = target?.closest("[data-open-cookie-preferences], [data-cookie-open-modal]");
+      const trigger = target?.closest("[data-cookie-open-modal],[data-open-cookie-preferences]");
       if (trigger) {
         e.preventDefault();
         openModal();

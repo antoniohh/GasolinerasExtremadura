@@ -2,6 +2,19 @@
 
 Todas las versiones relevantes de **Gasolineras Extremadura**. El proyecto sigue [Versionado Semántico](https://semver.org/lang/es/).
 
+## [1.4.1] — 2026-11-17
+
+Unificación de la arquitectura del Service Worker (`public/sw.js`) y del gestor de consentimiento (`src/components/CookieBanner.astro`) con la implementación de **Luz Extremadura**, incorporando estrategia *network-first* para `/datos/` y purga inmediata de cachés heredadas.
+
+### Mejorado y Corregido
+
+- **Service Worker PWA Homologado con *Luz Extremadura* ([`public/sw.js`](public/sw.js))**:
+  - Incorporación de estrategia **`network-first`** explícita con respaldo offline para los archivos de datos en `/datos/` (`hoy_extremadura.json` e históricos).
+  - Encadenamiento estricto de `.then(() => self.skipWaiting())` en `install` y `.then(() => self.clients.claim())` en `activate` dentro de `event.waitUntil(...)`, garantizando la invalidación inmediata de cachés anteriores bajo `CACHE_NAME = "combustible-ex-v1.4.1"`.
+  - Alineación de la lista de recursos precargados (`STATIC_ASSETS`) incluyendo `/assets/logo.svg`, `/assets/favicon.svg`, `/assets/icon-192.png`, `/assets/icon-512.png`, `/assets/apple-touch-icon.png` y `/favicon.ico`.
+- **Unificación de `CookieBanner.astro` ([`src/components/CookieBanner.astro`](src/components/CookieBanner.astro))**:
+  - Homologación del flujo de `applyConsent()`, selectores de apertura del modal y posicionamiento del interruptor accesible con la implementación de *Luz Extremadura*.
+
 ## [1.4.0] — 2026-11-16
 
 Migración al dominio propio oficial **`https://gasolinerasextremadura.es`**, actualización de identidad de marca a **Gasolineras EXTREMADURA** ([`public/assets/logo.svg`](public/assets/logo.svg) y [`public/assets/og-image.png`](public/assets/og-image.png)) e incorporación del bloque legal, de privacidad y de contacto completo (**LSSI-CE**, **RGPD**, **LOPDGDD**, **Guía de Cookies de la AEPD** y señales de confianza **Google E-E-A-T**).

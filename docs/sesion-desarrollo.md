@@ -202,3 +202,8 @@ GasolinerasExtremadura/
 - Creación e integración del bloque legal y de contacto completo (LSSI-CE, RGPD, LOPDGDD, Guía de Cookies AEPD y Google E-E-A-T): `/aviso-legal/`, `/privacidad/`, `/cookies/` y `/contacto/` con correo oficial `info@antoniohorrillo.com`.
 - Documentación detallada en [`docs/migracion-dominio-y-paginas-legales.md`](migracion-dominio-y-paginas-legales.md) y [`docs/plan-migracion-dominio-y-paginas-legales.md`](plan-migracion-dominio-y-paginas-legales.md).
 - Empaquetado final en `release/combustible-extremadura-v1.4.0.zip`, `release/combustible-extremadura-v1.4.0.zip.sha256` y `release/RELEASE_NOTES_v1.4.0.md`.
+
+### 5.10. Release `v1.4.1` (2026-11-17) — Homologación de Service Worker y Consentimiento con *Luz Extremadura*
+- Actualización de `public/sw.js` (`CACHE_NAME = "combustible-ex-v1.4.1"`) incorporando estrategia *network-first* para `/datos/`, encadenamiento estricto de `skipWaiting()` / `clients.claim()` dentro de `event.waitUntil(...)` y lista de `STATIC_ASSETS` homologada con *Luz Extremadura*.
+- Unificación de `src/components/CookieBanner.astro` con la implementación de *Luz Extremadura*.
+- Empaquetado final en `release/combustible-extremadura-v1.4.1.zip`, `release/combustible-extremadura-v1.4.1.zip.sha256` y `release/RELEASE_NOTES_v1.4.1.md`.
