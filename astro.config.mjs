@@ -2,7 +2,7 @@ import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  site: "https://combustible.antoniohorrillo.com",
+  site: "https://gasolinerasextremadura.es",
   output: "static",
   trailingSlash: "always",
   build: {

@@ -14,14 +14,14 @@ import { withBase } from "../lib/site";
     <div class="flex items-center gap-3 min-w-0">
       <img
         src={withBase("assets/icon-192.png")}
-        alt="Icono Combustible Extremadura"
+        alt="Icono Gasolineras Extremadura"
         width="44"
         height="44"
         class="w-11 h-11 rounded-xl shrink-0 border border-slate-700 bg-slate-950 p-0.5"
       />
       <div class="min-w-0">
         <h3 id="pwa-install-title" class="font-extrabold text-sm sm:text-base text-white tracking-tight truncate">
-          Instalar Combustible Extremadura
+          Instalar Gasolineras Extremadura
         </h3>
         <p id="pwa-install-desc" class="text-xs text-slate-300 leading-snug line-clamp-2">
           Añade la app a tu móvil para consultar los precios hoy al instante.
@@ -82,7 +82,7 @@ import { withBase } from "../lib/site";
         deferredPrompt.prompt();
         const choice = await deferredPrompt.userChoice;
         if (choice.outcome === "accepted") {
-          console.log("El usuario instaló la PWA de Combustible Extremadura");
+          console.log("El usuario instaló la PWA de Gasolineras Extremadura");
         }
         deferredPrompt = null;
         ocultarBanner();

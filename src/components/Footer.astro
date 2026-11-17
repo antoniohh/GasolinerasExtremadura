@@ -16,7 +16,7 @@ import Logo from "./Logo.astro";
             class="w-9 h-9 rounded-xl"
           />
           <span class="text-lg font-extrabold text-white tracking-tight">
-            {SITE_NAME}
+            Gasolineras <span class="text-sky-400">EXTREMADURA</span>
           </span>
         </div>
         <p class="text-sm text-slate-300 leading-relaxed">
@@ -62,7 +62,7 @@ import Logo from "./Logo.astro";
         <ul class="space-y-2.5 text-sm">
           <li>
             <a
-              href="https://luz.antoniohorrillo.com/"
+              href="https://luzextremadura.es/"
               class="text-slate-300 hover:text-amber-300 transition-colors inline-flex items-center gap-1.5"
               title="Precio de la luz hoy en Extremadura hora a hora (PVPC)"
             >
@@ -106,23 +106,33 @@ import Logo from "./Logo.astro";
         </ul>
       </div>
 
-      <!-- Columna 4: Fuente Oficial y Privacidad -->
+      <!-- Columna 4: Información Legal y Privacidad -->
       <div>
         <h3 class="text-sm font-bold uppercase tracking-wider text-white mb-4">
-          Fuente y Privacidad
+          Información Legal y Privacidad
         </h3>
-        <ul class="space-y-2.5 text-sm text-slate-300">
+        <p class="text-xs leading-relaxed text-slate-300 mb-3">
+          Datos oficiales MITECO (Orden ITC/2308/2007). Sin registros, sin muros de pago y solo analítica anónima bajo consentimiento.
+        </p>
+        <ul class="space-y-2 text-xs sm:text-sm text-slate-300">
           <li>
-            <span class="block text-white font-semibold">Origen de datos:</span>
-            <span class="text-xs">Sede Electrónica MITECO · Orden ITC/2308/2007</span>
+            <a href={withBase("aviso-legal/")} class="text-slate-300 hover:text-sky-300 transition-colors">
+              Aviso legal y condiciones de uso
+            </a>
           </li>
           <li>
-            <span class="block text-white font-semibold">Actualización automática:</span>
-            <span class="text-xs">Diaria a las 06:00h (Europe/Madrid)</span>
+            <a href={withBase("privacidad/")} class="text-slate-300 hover:text-sky-300 transition-colors">
+              Política de privacidad (RGPD)
+            </a>
           </li>
-          <li class="pt-1">
-            <a href={withBase("cookies/")} class="text-slate-300 hover:text-white transition-colors underline">
+          <li>
+            <a href={withBase("cookies/")} class="text-slate-300 hover:text-sky-300 transition-colors">
               Política de cookies
+            </a>
+          </li>
+          <li>
+            <a href={withBase("contacto/")} class="text-slate-300 hover:text-sky-300 transition-colors">
+              Contacto y soporte
             </a>
           </li>
           <li>
@@ -131,7 +141,7 @@ import Logo from "./Logo.astro";
               data-open-cookie-preferences
               class="text-sky-300 hover:text-white transition-colors underline cursor-pointer text-left"
             >
-              Preferencias de cookies
+              Configurar preferencias de cookies
             </button>
           </li>
         </ul>
@@ -142,7 +152,7 @@ import Logo from "./Logo.astro";
     <!-- Barra inferior -->
     <div class="mt-12 pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-300">
       <p>
-        © {new Date().getFullYear()} Combustible Extremadura · Creado por <a href={AUTHOR_URL} target="_blank" rel="noopener noreferrer" class="text-sky-300 hover:text-white font-medium underline">{AUTHOR_NAME}</a>
+        © {new Date().getFullYear()} {SITE_NAME} · Creado por <a href={AUTHOR_URL} target="_blank" rel="noopener noreferrer" class="text-sky-300 hover:text-white font-medium underline">{AUTHOR_NAME}</a>
       </p>
       <div class="flex items-center gap-2 text-slate-300 font-semibold">
         <span class="pulse-dot"></span>

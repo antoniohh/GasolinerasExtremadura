@@ -1,6 +1,6 @@
 # Guía Técnica de la API Oficial de Precios de Carburantes (MITECO)
 
-Esta guía documenta la estructura, funcionamiento y consumo de los servicios REST públicos del **Ministerio para la Transición Ecológica y el Reto Demográfico (MITECO)** del Gobierno de España utilizados por **Combustible Extremadura** (`https://combustible.antoniohorrillo.com/`) para la consulta diaria e histórica de precios de gasolineras en la Comunidad Autónoma de Extremadura.
+Esta guía documenta la estructura, funcionamiento y consumo de los servicios REST públicos del **Ministerio para la Transición Ecológica y el Reto Demográfico (MITECO)** del Gobierno de España utilizados por **Combustible Extremadura** (`https://gasolinerasextremadura.es/`) para la consulta diaria e histórica de precios de gasolineras en la Comunidad Autónoma de Extremadura.
 
 ---
 

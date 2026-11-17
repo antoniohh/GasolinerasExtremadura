@@ -1,242 +1,204 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { SlidersHorizontal, Cookie, ShieldCheck, ExternalLink, ArrowLeft } from "@lucide/astro";
-import { SITE_NAME, AUTHOR_NAME, AUTHOR_URL, GITHUB_URL, withBase } from "../lib/site";
+import { SlidersHorizontal, Cookie, ArrowLeft, ExternalLink } from "@lucide/astro";
+import { withBase, SITE_NAME, SITE_DOMAIN } from "../lib/site";
 ---
 
 <BaseLayout
-  title={`Política de Cookies y Privacidad | ${SITE_NAME}`}
-  description={`Información detallada sobre el uso de cookies, Google Consent Mode v2 y almacenamiento local en ${SITE_NAME}.`}
+  title={`Política de Cookies | ${SITE_NAME}`}
+  description={`Información detallada sobre el uso de cookies analíticas, almacenamiento local y Google Consent Mode v2 en ${SITE_NAME} (${SITE_DOMAIN}).`}
   canonicalPath="cookies/"
 >
-  <!-- Cabecera de página -->
-  <section class="bg-slate-900 text-white py-12 lg:py-16 border-b border-slate-800">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
-        Política de Cookies y Privacidad
-      </h1>
-      <p class="text-slate-200 text-base sm:text-lg leading-relaxed mb-6">
-        Información transparente sobre el almacenamiento local y las cookies analíticas opcionales que utilizamos en <strong>{SITE_NAME}</strong> para garantizar el servicio y analizar su uso de forma anónima.
-      </p>
-      <div class="flex flex-wrap items-center gap-3">
-        <button
-          type="button"
-          data-open-cookie-preferences
-          class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-500 text-white text-xs sm:text-sm font-bold transition-colors cursor-pointer"
-        >
-          <SlidersHorizontal size={17} aria-hidden="true" />
-          <span>Configurar preferencias de cookies</span>
-        </button>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+    <div class="flex flex-wrap items-center justify-between gap-4 mb-8">
+      <a
+        href={withBase()}
+        class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-600 hover:text-sky-700 transition-colors"
+      >
+        <ArrowLeft size={16} />
+        <span>Volver a la portada</span>
+      </a>
+
+      <!-- Navegación rápida entre páginas legales -->
+      <nav aria-label="Documentación legal" class="flex flex-wrap items-center gap-2 text-xs font-semibold">
         <a
-          href={withBase("")}
-          class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-100 border border-slate-700 text-xs sm:text-sm font-bold transition-colors"
+          href={withBase("aviso-legal/")}
+          class="px-3 py-1.5 rounded-lg bg-slate-200/80 text-slate-700 hover:bg-slate-300 transition-colors"
         >
-          <ArrowLeft size={16} aria-hidden="true" />
-          <span>Volver a precios de hoy</span>
+          Aviso legal
         </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contenido principal -->
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16 space-y-8 text-slate-700 text-sm sm:text-base leading-relaxed">
-
-    <!-- Qué son las cookies -->
-    <section class="surface-panel p-6 sm:p-8">
-      <h2 class="mb-3 text-xl font-extrabold text-slate-900 flex items-center gap-2.5">
-        <Cookie class="text-sky-700 shrink-0" size={22} aria-hidden="true" />
-        <span>¿Qué es una cookie y cómo protegemos tu privacidad?</span>
-      </h2>
-      <p class="mb-3">
-        Una <strong>cookie</strong> es un pequeño archivo de texto que los sitios web almacenan en tu navegador cuando los visitas. Permite recordar tus preferencias de configuración o recopilar estadísticas agregadas de uso.
-      </p>
-      <p>
-        En <strong>{SITE_NAME}</strong> aplicamos el principio de mínima intrusión: <strong>no mostramos publicidad, no comercializamos datos ni utilizamos cookies de seguimiento comercial o de redes sociales</strong>. Por defecto, las cookies analíticas permanecen desactivadas (<code>denied</code>) mediante <strong>Google Consent Mode v2</strong> salvo que decidas aceptarlas expresamente.
-      </p>
-    </section>
-
-    <!-- Tabla de cookies utilizadas -->
-    <section class="surface-panel p-6 sm:p-8">
-      <h2 class="mb-3 text-xl font-extrabold text-slate-900 flex items-center gap-2.5">
-        <ShieldCheck class="text-sky-700 shrink-0" size={22} aria-hidden="true" />
-        <span>Detalle de cookies y almacenamiento utilizado</span>
-      </h2>
-      <p class="mb-5">
-        Clasificamos las tecnologías de almacenamiento del sitio en dos únicas categorías:
-      </p>
-
-      <div class="overflow-x-auto border border-slate-200 rounded-xl">
-        <table class="w-full text-left border-collapse text-xs sm:text-sm">
-          <thead>
-            <tr class="border-b border-slate-200 bg-slate-100 text-slate-900 font-bold uppercase text-xs">
-              <th class="p-3.5">Nombre</th>
-              <th class="p-3.5">Tipo / Proveedor</th>
-              <th class="p-3.5">Finalidad</th>
-              <th class="p-3.5">Duración</th>
-              <th class="p-3.5">Carácter</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-slate-200">
-            <tr>
-              <td class="p-3.5 font-mono font-bold text-slate-900">combustible_extremadura_cookie_consent</td>
-              <td class="p-3.5">Técnica propia (<code>localStorage</code>)</td>
-              <td class="p-3.5">Guarda tu elección (aceptar o rechazar analítica) para no volver a mostrar el banner en cada visita.</td>
-              <td class="p-3.5">Persistente</td>
-              <td class="p-3.5">
-                <span class="inline-block px-2.5 py-0.5 text-xs font-bold rounded-full bg-emerald-100 text-emerald-900">
-                  Necesaria
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <td class="p-3.5 font-mono font-bold text-sky-900">_ga</td>
-              <td class="p-3.5">Analítica (Google Analytics 4)</td>
-              <td class="p-3.5">Distingue visitas de usuarios de forma anónima y agregada para medir las consultas de precios en Extremadura.</td>
-              <td class="p-3.5">13 meses</td>
-              <td class="p-3.5">
-                <span class="inline-block px-2.5 py-0.5 text-xs font-bold rounded-full bg-sky-100 text-sky-900">
-                  Opcional
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <td class="p-3.5 font-mono font-bold text-sky-900">_ga_YSZC0MQCHF</td>
-              <td class="p-3.5">Analítica (Google Analytics 4)</td>
-              <td class="p-3.5">Mantiene el estado de la sesión anónima en Google Analytics mientras consultas las secciones del portal.</td>
-              <td class="p-3.5">13 meses</td>
-              <td class="p-3.5">
-                <span class="inline-block px-2.5 py-0.5 text-xs font-bold rounded-full bg-sky-100 text-sky-900">
-                  Opcional
-                </span>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <!-- Arquitectura de Google Consent Mode v2 -->
-    <section class="surface-panel p-6 sm:p-8">
-      <h2 class="mb-3 text-xl font-extrabold text-slate-900 flex items-center gap-2.5">
-        <ShieldCheck class="text-sky-700 shrink-0" size={22} aria-hidden="true" />
-        <span>Funcionamiento de Google Consent Mode v2</span>
-      </h2>
-      <p class="mb-3">
-        En cumplimiento riguroso del Reglamento General de Protección de Datos (RGPD) y las directrices de la Agencia Española de Protección de Datos (AEPD), implementamos la especificación técnica oficial <strong>Google Consent Mode v2</strong>:
-      </p>
-      <ul class="space-y-2 list-disc list-inside text-sm mb-4">
-        <li>
-          <strong>Visitantes del Espacio Económico Europeo (España y UE), Reino Unido y Suiza:</strong> Todas las señales de almacenamiento y analítica (<code>analytics_storage</code>, <code>ad_storage</code>, <code>ad_user_data</code> y <code>ad_personalization</code>) nacen <strong>estrictamente denegadas (<code>denied</code>)</strong> por defecto en la cabecera.
-        </li>
-        <li>
-          <strong>Si rechazas las cookies o no interactúas:</strong> No se almacena ninguna cookie en tu navegador. Google Analytics opera únicamente con pings de medición agregada sin cookies ni identificadores de usuario persistentes.
-        </li>
-        <li>
-          <strong>Si aceptas las cookies:</strong> Se concede la medición estadística y se activan las cookies de sesión (<code>_ga</code>, <code>_ga_YSZC0MQCHF</code>). Las 4 señales de consentimiento se actualizan a <code>granted</code> para certificar la autorización ante Google, garantizando que <strong>en ningún caso Combustible Extremadura realiza publicidad personalizada ni comercializa datos</strong>.
-        </li>
-        <li>
-          <strong>Visitantes internacionales (fuera del EEE):</strong> El consentimiento nace concedido conforme a los marcos normativos aplicables en sus territorios.
-        </li>
-      </ul>
-      <p class="text-xs text-slate-600">
-        Tu elección se conserva en <code>localStorage</code> (<code>combustible_extremadura_cookie_consent</code>) únicamente en tu propio dispositivo para recordar tu preferencia.
-      </p>
-    </section>
-
-    <!-- Cómo gestionar o revocar el consentimiento -->
-    <section class="surface-panel p-6 sm:p-8">
-      <h2 class="mb-3 text-xl font-extrabold text-slate-900">
-        Cómo modificar o revocar tu consentimiento en cualquier momento
-      </h2>
-      <p class="mb-4">
-        Conforme a las directrices de la Agencia Española de Protección de Datos (AEPD) y el Reglamento General de Protección de Datos (RGPD), puedes cambiar o retirar tu consentimiento cuando quieras pulsando este botón:
-      </p>
-      <div class="mb-3">
-        <button
-          type="button"
-          data-open-cookie-preferences
-          class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs sm:text-sm font-bold transition-colors cursor-pointer"
+        <a
+          href={withBase("privacidad/")}
+          class="px-3 py-1.5 rounded-lg bg-slate-200/80 text-slate-700 hover:bg-slate-300 transition-colors"
         >
-          <SlidersHorizontal size={17} aria-hidden="true" />
-          <span>Cambiar mis preferencias de cookies</span>
-        </button>
+          Política de privacidad
+        </a>
+        <span class="px-3 py-1.5 rounded-lg bg-slate-900 text-sky-300">
+          Política de cookies
+        </span>
+        <a
+          href={withBase("contacto/")}
+          class="px-3 py-1.5 rounded-lg bg-slate-200/80 text-slate-700 hover:bg-slate-300 transition-colors"
+        >
+          Contacto
+        </a>
+      </nav>
+    </div>
+
+    <header class="mb-10 pb-6 border-b border-slate-200">
+      <div class="flex items-center gap-2.5 text-sky-700 font-bold text-sm uppercase tracking-wider mb-2">
+        <Cookie size={20} />
+        <span>Transparencia · Guía de Cookies AEPD</span>
       </div>
-      <p class="text-xs text-slate-600">
-        También dispones del enlace permanente «Preferencias de cookies» en el pie de página de toda la web.
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+        Política de Cookies
+      </h1>
+      <p class="mt-3 text-base sm:text-lg text-slate-600">
+        En <strong>{SITE_NAME} ({SITE_DOMAIN})</strong> apostamos por una experiencia limpia: sin publicidad, sin seguimiento comercial y con control total sobre tus preferencias.
       </p>
-    </section>
+    </header>
 
-    <!-- Gestión en el navegador -->
-    <section class="surface-panel p-6 sm:p-8">
-      <h2 class="mb-3 text-xl font-extrabold text-slate-900">
-        Desactivación o borrado de cookies desde tu navegador
-      </h2>
-      <p class="mb-4">
-        Adicionalmente, puedes bloquear o eliminar las cookies almacenadas en tu dispositivo desde la configuración de tu navegador:
-      </p>
-      <ul class="space-y-2 list-disc list-inside text-sm">
-        <li>
-          <a
-            href="https://support.google.com/chrome/answer/95647"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-sky-800 underline font-bold hover:text-sky-950 inline-flex items-center gap-1"
-          >
-            <span>Google Chrome</span>
-            <ExternalLink size={14} aria-hidden="true" />
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-sitios-web-rastrear-preferencias"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-sky-800 underline font-bold hover:text-sky-950 inline-flex items-center gap-1"
-          >
-            <span>Mozilla Firefox</span>
-            <ExternalLink size={14} aria-hidden="true" />
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://support.apple.com/es-es/guide/safari/sfri11471/mac"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-sky-800 underline font-bold hover:text-sky-950 inline-flex items-center gap-1"
-          >
-            <span>Apple Safari</span>
-            <ExternalLink size={14} aria-hidden="true" />
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://support.microsoft.com/es-es/microsoft-edge/eliminar-las-cookies-en-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-sky-800 underline font-bold hover:text-sky-950 inline-flex items-center gap-1"
-          >
-            <span>Microsoft Edge</span>
-            <ExternalLink size={14} aria-hidden="true" />
-          </a>
-        </li>
-      </ul>
-    </section>
+    <div class="space-y-8 text-slate-700 text-sm sm:text-base leading-relaxed">
+      <section>
+        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mb-3">
+          1. ¿Qué son las cookies y qué tecnologías utilizamos?
+        </h2>
+        <p>
+          Las cookies y tecnologías similares (como el almacenamiento local <code>localStorage</code> y <code>sessionStorage</code> del navegador) son pequeños ficheros o registros que los sitios web guardan en tu dispositivo para recordar tus preferencias técnicas o recopilar información estadística de uso.
+        </p>
+        <p class="mt-2">
+          En <strong>{SITE_NAME}</strong> no utilizamos cookies publicitarias, cookies de seguimiento entre sitios ni vendemos datos a terceros. Únicamente empleamos:
+        </p>
+        <ul class="list-disc pl-5 mt-2 space-y-1.5">
+          <li>
+            <strong>Almacenamiento técnico necesario:</strong> Guarda en tu navegador si has aceptado o rechazado la medición analítica para no mostrarte el banner en cada visita, así como el estado de cierre del aviso de instalación PWA durante la sesión.
+          </li>
+          <li>
+            <strong>Cookies analíticas opcionales (Google Analytics 4):</strong> Solo si nos das tu consentimiento expreso, nos permiten conocer de forma anónima y agregada qué municipios y comparativas de precios se consultan con mayor frecuencia para mejorar el servicio.
+          </li>
+        </ul>
+      </section>
 
-    <!-- Responsable -->
-    <section class="surface-panel p-6 sm:p-8">
-      <h2 class="mb-3 text-xl font-extrabold text-slate-900">
-        Responsable del sitio y contacto
-      </h2>
-      <p class="mb-2">
-        El responsable del portal <strong>{SITE_NAME}</strong> es <a href={AUTHOR_URL} target="_blank" rel="noopener noreferrer" class="font-bold text-sky-800 underline">{AUTHOR_NAME}</a>.
-      </p>
-      <p>
-        Puedes consultar el código fuente completo y contactar a través del repositorio oficial en GitHub:
-        <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" class="font-bold text-sky-800 underline">
-          github.com/antoniohh/CombustibleExtremadura
-        </a>.
-      </p>
-    </section>
+      <section>
+        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mb-3">
+          2. Detalle de cookies y almacenamiento utilizado en {SITE_DOMAIN}
+        </h2>
+        <div class="overflow-x-auto border border-slate-200 rounded-xl bg-white shadow-xs mt-3">
+          <table class="w-full text-left border-collapse text-xs sm:text-sm">
+            <thead>
+              <tr class="bg-slate-900 text-white">
+                <th class="py-3 px-4 font-bold">Nombre</th>
+                <th class="py-3 px-4 font-bold">Proveedor</th>
+                <th class="py-3 px-4 font-bold">Tipo / Categoría</th>
+                <th class="py-3 px-4 font-bold">Duración</th>
+                <th class="py-3 px-4 font-bold">Finalidad</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200">
+              <tr>
+                <td class="py-3 px-4 font-mono font-semibold text-slate-900">combustible_extremadura_cookie_consent</td>
+                <td class="py-3 px-4">Propia ({SITE_DOMAIN})</td>
+                <td class="py-3 px-4">Técnica (<code>localStorage</code>)</td>
+                <td class="py-3 px-4">Persistente</td>
+                <td class="py-3 px-4">Almacena el estado de consentimiento del usuario (<code>granted</code> o <code>denied</code>).</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-mono font-semibold text-slate-900">pwa_install_dismissed</td>
+                <td class="py-3 px-4">Propia ({SITE_DOMAIN})</td>
+                <td class="py-3 px-4">Técnica (<code>sessionStorage</code>)</td>
+                <td class="py-3 px-4">Sesión</td>
+                <td class="py-3 px-4">Recuerda si el usuario ha cerrado el aviso de instalación de la app durante la sesión.</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-mono font-semibold text-slate-900">_ga</td>
+                <td class="py-3 px-4">Google Analytics 4</td>
+                <td class="py-3 px-4">Analítica (Opcional)</td>
+                <td class="py-3 px-4">2 años</td>
+                <td class="py-3 px-4">Distingue visitas únicas de forma estadística y anónima (solo si se acepta).</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-mono font-semibold text-slate-900">_ga_YSZC0MQCHF</td>
+                <td class="py-3 px-4">Google Analytics 4</td>
+                <td class="py-3 px-4">Analítica (Opcional)</td>
+                <td class="py-3 px-4">2 años</td>
+                <td class="py-3 px-4">Mantiene el estado de la sesión estadística en GA4 (solo si se acepta).</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
 
+      <section>
+        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mb-3">
+          3. Funcionamiento de Google Consent Mode v2
+        </h2>
+        <p>
+          Cumplimos rigurosamente con el Reglamento General de Protección de Datos (RGPD), la LSSI-CE y la Guía sobre el uso de las cookies de la Agencia Española de Protección de Datos (AEPD), implementando la especificación técnica <strong>Google Consent Mode v2</strong>:
+        </p>
+        <ul class="list-disc pl-5 mt-3 space-y-2 text-sm">
+          <li>
+            <strong>Visitantes del Espacio Económico Europeo (España y la UE), Reino Unido y Suiza:</strong> Todas las señales de consentimiento (<code>analytics_storage</code>, <code>ad_storage</code>, <code>ad_user_data</code> y <code>ad_personalization</code>) nacen <strong>estrictamente denegadas (<code>denied</code>)</strong> por defecto en la cabecera antes de ejecutar cualquier script.
+          </li>
+          <li>
+            <strong>Si rechazas o no interactúas con el banner:</strong> No se almacena ninguna cookie analítica en tu navegador ni se crea perfil de usuario. Google Analytics 4 opera únicamente mediante pings técnicos agregados sin cookies.
+          </li>
+          <li>
+            <strong>Si pulsas «Aceptar todas» o activas las cookies analíticas:</strong> Se habilita la medición estadística con cookies (<code>_ga</code> y <code>_ga_YSZC0MQCHF</code>) con IP anonimizada, sin que en ningún momento se utilicen tus datos para anuncios personalizados ni remarketing comercial.
+          </li>
+          <li>
+            <strong>Visitantes internacionales (fuera del EEE):</strong> El consentimiento se aplica de acuerdo con la regulación de sus respectivas jurisdicciones.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 mb-3">
+          4. Modificar o retirar tu consentimiento
+        </h2>
+        <p>
+          Puedes revisar, cambiar o revocar tu consentimiento en cualquier momento y con efecto inmediato pulsando el siguiente botón:
+        </p>
+        <div class="mt-4">
+          <button
+            type="button"
+            data-open-cookie-preferences
+            class="px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-sky-300 font-bold text-sm inline-flex items-center gap-2 cursor-pointer transition-colors shadow-sm"
+          >
+            <SlidersHorizontal size={16} />
+            <span>Configurar preferencias de cookies</span>
+          </button>
+        </div>
+        <p class="mt-4 text-sm">
+          Adicionalmente, puedes eliminar o bloquear las cookies directamente desde los ajustes de tu navegador web (
+          <a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener noreferrer" class="text-sky-800 underline font-semibold inline-flex items-center gap-0.5">
+            <span>Chrome</span>
+            <ExternalLink size={12} />
+          </a>,{" "}
+          <a href="https://support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-sitios-web-rastrear-preferencias" target="_blank" rel="noopener noreferrer" class="text-sky-800 underline font-semibold inline-flex items-center gap-0.5">
+            <span>Firefox</span>
+            <ExternalLink size={12} />
+          </a>,{" "}
+          <a href="https://support.apple.com/es-es/guide/safari/sfri11471/mac" target="_blank" rel="noopener noreferrer" class="text-sky-800 underline font-semibold inline-flex items-center gap-0.5">
+            <span>Safari</span>
+            <ExternalLink size={12} />
+          </a>{" "}
+          o{" "}
+          <a href="https://support.microsoft.com/es-es/microsoft-edge/eliminar-las-cookies-en-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" rel="noopener noreferrer" class="text-sky-800 underline font-semibold inline-flex items-center gap-0.5">
+            <span>Edge</span>
+            <ExternalLink size={12} />
+          </a>). Para más información sobre el tratamiento de datos y tus derechos, consulta nuestra{" "}
+          <a href={withBase("privacidad/")} class="font-bold text-sky-800 hover:underline">
+            Política de Privacidad
+          </a>{" "}
+          y nuestro{" "}
+          <a href={withBase("aviso-legal/")} class="font-bold text-sky-800 hover:underline">
+            Aviso Legal
+          </a>.
+        </p>
+        <p class="mt-4 text-xs text-slate-500">
+          Última actualización de esta Política de Cookies: noviembre de 2026.
+        </p>
+      </section>
+    </div>
   </div>
 </BaseLayout>

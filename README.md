@@ -1,18 +1,18 @@
-# Combustible Extremadura
+# Gasolineras Extremadura
 
-[![Versión](https://img.shields.io/badge/versi%C3%B3n-1.3.1-0284c7?style=for-the-badge)](CHANGELOG.md)
+[![Versión](https://img.shields.io/badge/versi%C3%B3n-1.4.0-0284c7?style=for-the-badge)](CHANGELOG.md)
 [![Astro](https://img.shields.io/badge/Astro-7.4.2-BC52EE?style=for-the-badge&logo=astro&logoColor=white)](https://astro.build)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.3.3-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 [![Chart.js](https://img.shields.io/badge/Chart.js-4.5.1-FF6384?style=for-the-badge&logo=chartdotjs&logoColor=white)](https://www.chartjs.org)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9.3-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
 [![Licencia MIT](https://img.shields.io/badge/Licencia-MIT-green?style=for-the-badge)](LICENSE)
-[![Deploy](https://img.shields.io/badge/Deploy-GitHub_Pages-0f172a?style=for-the-badge&logo=github&logoColor=white)](https://combustible.antoniohorrillo.com/)
+[![Deploy](https://img.shields.io/badge/Deploy-GitHub_Pages-0f172a?style=for-the-badge&logo=github&logoColor=white)](https://gasolinerasextremadura.es/)
 
-Aplicación web estática (SPA) para la consulta diaria e histórica del **precio del combustible en Extremadura (Gasolina 95 E5 y Gasóleo A / Diésel)** en las provincias de Badajoz y Cáceres y sus 179 municipios con estación de servicio.
+Aplicación web estática (SPA) de **Gasolineras EXTREMADURA** para la consulta diaria e histórica del **precio del combustible en Extremadura (Gasolina 95 E5 y Gasóleo A / Diésel)** en las provincias de Badajoz y Cáceres y sus 179 municipios con estación de servicio.
 
-- **Sitio web en producción:** [https://combustible.antoniohorrillo.com](https://combustible.antoniohorrillo.com)
-- **Repositorio:** [https://github.com/antoniohh/CombustibleExtremadura](https://github.com/antoniohh/CombustibleExtremadura)
-- **Autor:** Antonio Horrillo ([antoniohorrillo.com](https://antoniohorrillo.com))
+- **Sitio web en producción:** [https://gasolinerasextremadura.es](https://gasolinerasextremadura.es)
+- **Repositorio:** [https://github.com/antoniohh/GasolinerasExtremadura](https://github.com/antoniohh/GasolinerasExtremadura)
+- **Autor:** Antonio Horrillo ([antoniohorrillo.com](https://antoniohorrillo.com) · [info@antoniohorrillo.com](mailto:info@antoniohorrillo.com))
 
 ---
 
@@ -34,10 +34,10 @@ Aplicación web estática (SPA) para la consulta diaria e histórica del **preci
    - Gráfico interactivo con Chart.js de evolución diaria (filtros por periodo y ámbito provincial) y gráfico comparativo de medias mensuales.
 5. **Calculadora Interactiva de Repostaje y Ahorro:**
    - Ajuste de litros, consumo y kilometraje anual para calcular el ahorro real repostando en las estaciones más económicas frente a la media.
-6. **SEO Técnico y Privacidad (RGPD / AEPD):**
+6. **SEO Técnico, Textos Legales (LSSI-CE) y Privacidad (RGPD / AEPD):**
    - Marcado estructurado Schema.org (`WebSite`, `WebPage`, `Dataset`, `ItemList` y `FAQPage` dinámica con los precios del día).
    - Activos vectoriales y Open Graph (`favicon.svg`, `favicon.ico`, `apple-touch-icon.png`, `logo.svg`, `og-image.png`, `robots.txt`, `sitemap.xml`, `site.webmanifest` y `CNAME`).
-   - Cumplimiento de privacidad con **Google Consent Mode v2** (bloqueo analítico previo por defecto), banner y modal de configuración (`CookieBanner.astro`) y página de [Política de Cookies](/cookies/) (`src/pages/cookies.astro`).
+   - Cumplimiento estricto de normativa legal y privacidad con **Google Consent Mode v2** (bloqueo analítico previo por defecto), banner y modal de configuración (`CookieBanner.astro`) y páginas de [Aviso Legal](/aviso-legal/) (`src/pages/aviso-legal.astro`), [Política de Privacidad](/privacidad/) (`src/pages/privacidad.astro`), [Política de Cookies](/cookies/) (`src/pages/cookies.astro`) y [Contacto y Soporte](/contacto/) (`src/pages/contacto.astro`) con Google Analytics 4 (`G-YSZC0MQCHF`).
 7. **Ecosistema y Red de Proyectos Abiertos:**
    - Barra superior unificada (`NetworkBar.astro`) 100% responsiva con acceso inmediato y swipe táctil fluido entre proyectos del ecosistema: *Combustible Extremadura*, *Luz Extremadura*, *Embalses Extremadura* y *GlucoLuna*.
    - Módulo enlazado en pie de página con *anchor texts* semánticos optimizados para SEO y traspaso de autoridad inter-dominio (*link equity*).
@@ -80,13 +80,15 @@ npm run historico:prov-completo
 ## 📁 Estructura del Proyecto
 
 ```text
-CombustibleExtremadura/
+GasolinerasExtremadura/
 ├── .github/
 │   └── workflows/
 │       ├── deploy.yml                             # Build diario a las 06:00 AM y despliegue en GitHub Pages
 │       └── release.yml                            # Empaquetado ZIP y publicación de release en tags v*
 ├── docs/
 │   ├── guia-api-miteco.md                         # Documentación técnica de la API REST del MITECO
+│   ├── migracion-dominio-y-paginas-legales.md     # Registro de migración a gasolinerasextremadura.es y textos legales
+│   ├── plan-migracion-dominio-y-paginas-legales.md
 │   └── sesion-desarrollo.md                       # Registro técnico del desarrollo y arquitectura
 ├── public/
 │   ├── assets/
@@ -101,7 +103,7 @@ CombustibleExtremadura/
 │   │   ├── historico_extremadura_2026.json        # Histórico diario Extremadura 2025-2026
 │   │   └── historico_provincias_extremadura_2026.json
 │   ├── .nojekyll
-│   ├── CNAME                                      # Dominio personalizado: combustible.antoniohorrillo.com
+│   ├── CNAME                                      # Dominio personalizado: gasolinerasextremadura.es
 │   ├── favicon.ico
 │   ├── robots.txt
 │   ├── site.webmanifest
@@ -117,7 +119,10 @@ CombustibleExtremadura/
 │   ├── components/
 │   │   ├── CookieBanner.astro                     # Aviso y configuración de cookies (Consent Mode v2)
 │   │   ├── Footer.astro
-│   │   └── Header.astro
+│   │   ├── Header.astro
+│   │   ├── InstallPrompt.astro
+│   │   ├── Logo.astro
+│   │   └── NetworkBar.astro
 │   ├── data/
 │   │   ├── hoy_extremadura.json
 │   │   ├── historico_extremadura_2026.json
@@ -128,8 +133,11 @@ CombustibleExtremadura/
 │   ├── lib/
 │   │   └── site.ts                                # Constantes canónicas y dominio
 │   ├── pages/
-│   │   ├── cookies.astro                          # Página de Política de Cookies y Privacidad (/cookies/)
-│   │   └── index.astro                            # SPA principal
+│   │   ├── aviso-legal.astro                      # Página de Aviso Legal y Condiciones (/aviso-legal/)
+│   │   ├── contacto.astro                         # Página de Contacto y Soporte (/contacto/)
+│   │   ├── cookies.astro                          # Página de Política de Cookies (/cookies/)
+│   │   ├── index.astro                            # SPA principal
+│   │   └── privacidad.astro                       # Página de Política de Privacidad RGPD (/privacidad/)
 │   ├── scripts/
 │   │   └── spa.ts                                 # Buscador de municipios, Chart.js y calculadora
 │   └── styles/
@@ -148,13 +156,13 @@ CombustibleExtremadura/
 
 ---
 
-## 🌐 Despliegue en GitHub Pages (`combustible.antoniohorrillo.com`)
+## 🌐 Despliegue en GitHub Pages (`gasolinerasextremadura.es`)
 
-El repositorio está configurado para desplegarse automáticamente bajo el dominio personalizado `https://combustible.antoniohorrillo.com/`:
+El repositorio está configurado para desplegarse automáticamente bajo el dominio propio `https://gasolinerasextremadura.es/`:
 
 1. Sube los cambios a la rama `main`.
 2. En GitHub, entra en **Settings → Pages** y en **Build and deployment** selecciona **GitHub Actions**.
-3. Configura un registro DNS `CNAME` para `combustible.antoniohorrillo.com` apuntando a `antoniohh.github.io`.
+3. Configura los registros DNS de `gasolinerasextremadura.es` (`A`/`AAAA` en la raíz `@` apuntando a las IPs de GitHub Pages y `CNAME` para `www` apuntando a `antoniohh.github.io`).
 4. El workflow `.github/workflows/deploy.yml` se ejecuta automáticamente en cada `push` a `main` y todos los días a las **06:00 AM (Europe/Madrid)**, actualizando los precios desde el MITECO y publicando `dist/` con el archivo `CNAME` incluido.
 
 Si necesitas cambiar el dominio en el futuro, actualiza `src/lib/site.ts`, `astro.config.mjs`, `public/CNAME`, `public/robots.txt` y `public/sitemap.xml`.
@@ -163,10 +171,11 @@ Si necesitas cambiar el dominio en el futuro, actualiza `src/lib/site.ts`, `astr
 
 ## 📦 Control de Versiones
 
-Versión actual: **1.3.1** · [Historial completo en CHANGELOG.md](CHANGELOG.md)
+Versión actual: **1.4.0** · [Historial completo en CHANGELOG.md](CHANGELOG.md)
 
 | Versión | Fecha | Cambios principales |
 |---|---|---|
+| **1.4.0** | 2026-11-16 | Migración al dominio propio `https://gasolinerasextremadura.es` y marca **Gasolineras EXTREMADURA** (`logo.svg` y `og-image.png`), creación del bloque legal y de contacto completo (`/aviso-legal/`, `/privacidad/`, `/cookies/`, `/contacto/` con correo `info@antoniohorrillo.com`), actualización de sitemap y Service Worker `v1.4.0` |
 | **1.3.1** | 2026-11-13 | Renovación de recursos gráficos e identidad visual con Nano Banana (`icon-512.png`, `icon-192.png`, `apple-touch-icon.png`, `favicon.ico` y tarjeta Open Graph `1200×630`) y nuevo isotipo vectorial SVG con componente `<Logo />` en cabecera y pie |
 | 1.3.0 | 2026-11-12 | Incorporación de la barra superior transversal `NetworkBar.astro` 100% responsiva y módulo SEO «Red de Proyectos» en el pie de página |
 | 1.2.2 | 2026-11-09 | Desacoplamiento de fechas fijas y precios en `<title>` y `<meta description>`, prevención de desfase en SERPs de Google, tarjetas Open Graph perennes y automatización de `<lastmod>` en el sitemap |
@@ -176,7 +185,7 @@ Versión actual: **1.3.1** · [Historial completo en CHANGELOG.md](CHANGELOG.md)
 | 1.0.1 | 2026-11-02 | Incorporación de `AGENTS.md`, consolidación del flujo de publicación en GitHub Releases y paquete de distribución `v1.0.1` |
 | 1.0.0 | 2026-11-02 | Lanzamiento inicial en `combustible.antoniohorrillo.com`: precios diarios en 422 EESS, comparativa Badajoz vs Cáceres, buscador de 179 municipios, serie histórica 2025-2026 con 4 gráficos Chart.js, calculadora de ahorro, Consent Mode v2 y actualización diaria automatizada a las 06:00 AM |
 
-El workflow `.github/workflows/release.yml` compila el sitio y adjunta automáticamente `combustible-extremadura-v1.3.1.zip` al publicar una etiqueta `v*` en GitHub. Además, los paquetes precompilados locales se encuentran disponibles en `release/`.
+El workflow `.github/workflows/release.yml` compila el sitio y adjunta automáticamente `combustible-extremadura-v1.4.0.zip` al publicar una etiqueta `v*` en GitHub. Además, los paquetes precompilados locales se encuentran disponibles en `release/`.
 
 ---
 

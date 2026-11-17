@@ -1,7 +1,8 @@
-export const SITE = "https://combustible.antoniohorrillo.com";
+export const SITE = "https://gasolinerasextremadura.es";
+export const SITE_DOMAIN = "gasolinerasextremadura.es";
 export const BASE = "";
 
-export const SITE_NAME = "Combustible Extremadura";
+export const SITE_NAME = "Gasolineras Extremadura";
 export const SITE_TAGLINE = "Precio de la Gasolina 95 y Diésel en Extremadura Hoy (Badajoz y Cáceres)";
 export const SITE_DESCRIPTION =
   "Precio diario actualizado a las 06:00h de Gasolina 95 E5 y Gasóleo A (Diésel) en Extremadura: comparativa hoy entre Badajoz y Cáceres, buscador de los 179 municipios, evolución histórica 2025-2026 y datos oficiales MITECO.";
@@ -18,7 +19,8 @@ export const SITE_KEYWORDS = [
 ];
 export const AUTHOR_NAME = "Antonio Horrillo";
 export const AUTHOR_URL = "https://antoniohorrillo.com";
-export const GITHUB_URL = "https://github.com/antoniohh/CombustibleExtremadura";
+export const AUTHOR_EMAIL = "info@antoniohorrillo.com";
+export const GITHUB_URL = "https://github.com/antoniohh/GasolinerasExtremadura";
 
 export function withBase(path = ""): string {
   const clean = path.replace(/^\/+/, "");

@@ -167,7 +167,10 @@ async function main() {
 
   try {
     const res = await fetch(URL_MITECO_EXTREMADURA, {
-      headers: { Accept: 'application/json' }
+      headers: {
+        'User-Agent': 'GasolinerasExtremadura/1.0 (+https://gasolinerasextremadura.es)',
+        Accept: 'application/json'
+      }
     });
 
     if (!res.ok) {
@@ -379,14 +382,32 @@ async function main() {
       const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://combustible.antoniohorrillo.com/</loc>
+    <loc>https://gasolinerasextremadura.es/</loc>
     <lastmod>${fechaHoyISO}</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://combustible.antoniohorrillo.com/cookies/</loc>
-    <lastmod>2025-01-01</lastmod>
+    <loc>https://gasolinerasextremadura.es/aviso-legal/</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://gasolinerasextremadura.es/privacidad/</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://gasolinerasextremadura.es/cookies/</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://gasolinerasextremadura.es/contacto/</loc>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>

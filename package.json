@@ -1,7 +1,7 @@
 {
   "name": "combustible-extremadura",
   "type": "module",
-  "version": "1.3.1",
+  "version": "1.4.0",
   "private": true,
   "scripts": {
     "dev": "astro dev",
@@ -31,10 +31,10 @@
   },
   "author": "Antonio Horrillo (https://github.com/antoniohh)",
   "license": "MIT",
-  "homepage": "https://combustible.antoniohorrillo.com/",
+  "homepage": "https://gasolinerasextremadura.es/",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/antoniohh/CombustibleExtremadura.git"
+    "url": "git+https://github.com/antoniohh/GasolinerasExtremadura.git"
   },
   "engines": {
     "node": ">=22.0.0",

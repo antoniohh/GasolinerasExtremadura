@@ -1,6 +1,10 @@
-const CACHE_NAME = 'combustible-ex-v1.2.0';
+const CACHE_NAME = 'combustible-ex-v1.4.0';
 const STATIC_ASSETS = [
   '/',
+  '/aviso-legal/',
+  '/privacidad/',
+  '/cookies/',
+  '/contacto/',
   '/assets/icon-192.png',
   '/assets/icon-512.png',
   '/assets/favicon.svg',

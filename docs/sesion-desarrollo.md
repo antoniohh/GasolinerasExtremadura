@@ -1,11 +1,11 @@
-# Registro de Sesión: Desarrollo, Identidad Visual y Releases de Combustible Extremadura (`v1.0.0` → `v1.3.1`)
+# Registro de Sesión: Desarrollo, Identidad Visual y Releases de Combustible Extremadura (`v1.0.0` → `v1.4.0`)
 
-- **Fecha de la sesión:** 2 al 13 de noviembre de 2026
+- **Fecha de la sesión:** 2 al 16 de noviembre de 2026
 - **Proyecto:** Combustible Extremadura (`combustible-extremadura`)
-- **Versión vigente al cierre:** `v1.3.1`
-- **Dominio de producción:** `https://combustible.antoniohorrillo.com/`
-- **Repositorio oficial:** `https://github.com/antoniohh/CombustibleExtremadura`
-- **Autor y Titular:** Antonio Horrillo ([antoniohorrillo.com](https://antoniohorrillo.com))
+- **Versión vigente al cierre:** `v1.4.0`
+- **Dominio de producción:** `https://gasolinerasextremadura.es/`
+- **Repositorio oficial:** `https://github.com/antoniohh/GasolinerasExtremadura`
+- **Autor y Titular:** Antonio Horrillo ([antoniohorrillo.com](https://antoniohorrillo.com) · [info@antoniohorrillo.com](mailto:info@antoniohorrillo.com))
 - **Licencia:** MIT
 
 ---
@@ -43,7 +43,7 @@ Se ha diseñado, desarrollado y desplegado en producción **Combustible Extremad
 ## 3. Arquitectura del Proyecto
 
 ```text
-CombustibleExtremadura/
+GasolinerasExtremadura/
 ├── .github/
 │   └── workflows/
 │       ├── deploy.yml                             # Actualización diaria 06:00 AM y despliegue en GitHub Pages
@@ -196,3 +196,9 @@ CombustibleExtremadura/
   - Rediseño del isotipo vectorial SVG (`public/favicon.svg`, `public/assets/favicon.svg`, `public/assets/logo.svg`) y nuevo componente `src/components/Logo.astro` integrado en `Header.astro` y `Footer.astro`.
   - Nuevas creatividades generadas con **Nano Banana**: icono principal con *squircle* transparente (`icon-512.png`, `icon-192.png`, `apple-touch-icon.png`, `favicon.ico`) y tarjeta social Open Graph (`og-image.png`, `1200×630` px) con tarjeta 3D *glassmorphic* del mapa de Extremadura, corredores de estaciones de servicio y curvas de Gasolina 95 y Diésel.
 - Empaquetado final en `release/combustible-extremadura-v1.3.1.zip` y `release/RELEASE_NOTES_v1.3.1.md`.
+
+### 5.9. Release `v1.4.0` (2026-11-16) — Dominio Propio `gasolinerasextremadura.es` y Bloque Legal Completo
+- Migración de configuración canónica al dominio propio `https://gasolinerasextremadura.es` (`public/CNAME`, `astro.config.mjs`, `src/lib/site.ts`, `NetworkBar.astro`, `Footer.astro`, `robots.txt`, `sitemap.xml`, `sw.js` y `scripts/actualizar_precios_hoy.mjs`), sincronizando también el enlace del proyecto hermano `https://luzextremadura.es/`.
+- Creación e integración del bloque legal y de contacto completo (LSSI-CE, RGPD, LOPDGDD, Guía de Cookies AEPD y Google E-E-A-T): `/aviso-legal/`, `/privacidad/`, `/cookies/` y `/contacto/` con correo oficial `info@antoniohorrillo.com`.
+- Documentación detallada en [`docs/migracion-dominio-y-paginas-legales.md`](migracion-dominio-y-paginas-legales.md) y [`docs/plan-migracion-dominio-y-paginas-legales.md`](plan-migracion-dominio-y-paginas-legales.md).
+- Empaquetado final en `release/combustible-extremadura-v1.4.0.zip`, `release/combustible-extremadura-v1.4.0.zip.sha256` y `release/RELEASE_NOTES_v1.4.0.md`.

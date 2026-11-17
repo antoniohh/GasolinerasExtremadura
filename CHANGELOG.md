@@ -1,6 +1,25 @@
 # Changelog
 
-Todas las versiones relevantes de **Combustible Extremadura**. El proyecto sigue [Versionado Semántico](https://semver.org/lang/es/).
+Todas las versiones relevantes de **Gasolineras Extremadura**. El proyecto sigue [Versionado Semántico](https://semver.org/lang/es/).
+
+## [1.4.0] — 2026-11-16
+
+Migración al dominio propio oficial **`https://gasolinerasextremadura.es`**, actualización de identidad de marca a **Gasolineras EXTREMADURA** ([`public/assets/logo.svg`](public/assets/logo.svg) y [`public/assets/og-image.png`](public/assets/og-image.png)) e incorporación del bloque legal, de privacidad y de contacto completo (**LSSI-CE**, **RGPD**, **LOPDGDD**, **Guía de Cookies de la AEPD** y señales de confianza **Google E-E-A-T**).
+
+### Añadido y Mejorado
+
+- **Migración al Dominio Oficial `https://gasolinerasextremadura.es` y Marca `Gasolineras EXTREMADURA` ([`public/CNAME`](public/CNAME), [`astro.config.mjs`](astro.config.mjs), [`src/lib/site.ts`](src/lib/site.ts), [`src/components/Header.astro`](src/components/Header.astro), [`src/components/Footer.astro`](src/components/Footer.astro), [`src/components/NetworkBar.astro`](src/components/NetworkBar.astro), [`public/assets/logo.svg`](public/assets/logo.svg), [`public/assets/og-image.png`](public/assets/og-image.png), [`public/robots.txt`](public/robots.txt), [`public/sitemap.xml`](public/sitemap.xml) y [`scripts/actualizar_precios_hoy.mjs`](scripts/actualizar_precios_hoy.mjs))**:
+  - Actualización canónica del sitio a `https://gasolinerasextremadura.es` (`gasolinerasextremadura.es`) y denominación **Gasolineras Extremadura** (`Gasolineras EXTREMADURA`), sincronizando URLs canónicas, metadatos Open Graph, Twitter Cards, `site.webmanifest` y el grafo estructurado Schema.org (`WebSite`, `WebPage`, `Dataset`, `ItemList`, `FAQPage`, `BreadcrumbList`).
+  - Renovación del logotipo horizontal `public/assets/logo.svg` y de la tarjeta social Open Graph `public/assets/og-image.png` (`1200×630` px) con el nuevo título **Gasolineras Extremadura** y el dominio `gasolinerasextremadura.es`, manteniendo intactos los favicons e iconos PWA.
+  - Generación automatizada del `sitemap.xml` con las 5 rutas públicas bajo `https://gasolinerasextremadura.es/` y cabecera `User-Agent` hacia el MITECO actualizada.
+  - Sincronización del enlace del proyecto hermano *Luz Extremadura* a `https://luzextremadura.es/` en `NetworkBar.astro` y `Footer.astro`.
+  - Caché del Service Worker (`public/sw.js`) elevada a `combustible-ex-v1.4.0` con precarga de las páginas legales y de contacto.
+- **Nuevas Páginas Legales y de Contacto ([`src/pages/aviso-legal.astro`](src/pages/aviso-legal.astro), [`src/pages/privacidad.astro`](src/pages/privacidad.astro), [`src/pages/cookies.astro`](src/pages/cookies.astro) y [`src/pages/contacto.astro`](src/pages/contacto.astro))**:
+  - **Aviso Legal (`/aviso-legal/`):** Identificación completa del titular conforme al art. 10 LSSI-CE (`info@antoniohorrillo.com`, `antoniohorrillo.com`), condiciones de uso, origen público de los datos (MITECO · Orden ITC/2308/2007 · `FiltroCCAA/11`), carácter orientativo de los precios y calculadora, e independencia institucional y comercial.
+  - **Política de Privacidad (`/privacidad/`):** Cumplimiento del RGPD y LOPDGDD bajo el principio de privacidad desde el diseño, detalle de encargados del tratamiento, conservación y ejercicio de derechos con acceso directo al configurador de consentimiento.
+  - **Política de Cookies (`/cookies/`):** Tabla técnica detallada de almacenamiento local (`localStorage` / `sessionStorage`) y cookies opcionales de GA4 (`_ga`, `_ga_YSZC0MQCHF`), explicación de **Google Consent Mode v2** y botón interactivo de gestión.
+  - **Contacto y Soporte (`/contacto/`):** Atención directa (`info@antoniohorrillo.com` y `antoniohorrillo.com`), canal de soporte técnico en GitHub Issues y orientación al consumidor con enlaces al Geoportal de Gasolineras (MITECO), INCOEX y CNMC.
+  - **Navegación transversal ([`src/components/Footer.astro`](src/components/Footer.astro) y [`src/components/CookieBanner.astro`](src/components/CookieBanner.astro)):** Enlaces en el pie de página, en el banner de cookies y barra de navegación rápida entre las 4 páginas.
 
 ## [1.3.1] — 2026-11-13
 
